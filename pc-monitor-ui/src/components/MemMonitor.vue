@@ -140,7 +140,7 @@ export default {
     watch: {
         memUsage: {
             handler() {
-                console.log("watch"+this.memUsage)
+                // console.log("watch"+this.memUsage)
                 // 监听memUsage
                 this.myChart.setOption({
                     series: [
@@ -165,7 +165,7 @@ export default {
     },
     methods: {
         async getMemUsage() {
-            console.log(this.MemUsage)
+            // console.log(this.MemUsage)
         }
     }
 }

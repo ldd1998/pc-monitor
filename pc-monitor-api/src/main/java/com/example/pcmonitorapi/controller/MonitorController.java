@@ -1,6 +1,6 @@
 package com.example.pcmonitorapi.controller;
 
-import com.example.pcmonitorapi.controller.service.MonitorService;
+import com.example.pcmonitorapi.service.MonitorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +18,6 @@ public class MonitorController {
     MonitorService monitorService;
     @GetMapping("/cpuMonitor")
     public Map<String, String> cpuMonitor(){
-        return monitorService.monitor();
+        return monitorService.monitor(700L);
     }
 }

@@ -139,7 +139,7 @@ export default {
     watch: {
         cpuUsage: {
             handler() {
-                console.log("watch"+this.cpuUsage)
+                // console.log("watch"+this.cpuUsage)
                 // 监听cpuUsage
                 this.myChart.setOption({
                     series: [
@@ -164,7 +164,7 @@ export default {
     },
     methods: {
         async getCpuUsage() {
-            console.log(this.cpuUsage)
+            // console.log(this.cpuUsage)
         }
     }
 }
