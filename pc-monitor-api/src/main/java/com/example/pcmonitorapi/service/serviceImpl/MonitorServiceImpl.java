@@ -1,9 +1,9 @@
-package com.example.pcmonitorapi.controller.service.serviceImpl;
+package com.example.pcmonitorapi.service.serviceImpl;
 
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.system.oshi.CpuInfo;
 import cn.hutool.system.oshi.OshiUtil;
-import com.example.pcmonitorapi.controller.service.MonitorService;
+import com.example.pcmonitorapi.service.MonitorService;
 import org.springframework.stereotype.Service;
 import oshi.hardware.GlobalMemory;
 import oshi.util.GlobalConfig;
@@ -16,9 +16,9 @@ import java.util.Map;
  */
 @Service
 public class MonitorServiceImpl implements MonitorService {
-    public Map<String, String> monitor(){
+    public Map<String, String> monitor(Long waitingTime){
         GlobalConfig.set(GlobalConfig.OSHI_OS_WINDOWS_CPU_UTILITY, true);
-        CpuInfo cpuInfo = OshiUtil.getCpuInfo(700);
+        CpuInfo cpuInfo = OshiUtil.getCpuInfo(waitingTime);
         GlobalMemory memory = OshiUtil.getMemory();
 
         Map<String ,String > map = new HashMap<>();
