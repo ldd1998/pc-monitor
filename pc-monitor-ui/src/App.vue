@@ -54,7 +54,9 @@ export default {
       if (typeof (WebSocket) === "undefined") {
         this.$toast.fail("您的浏览器不支持WebSocket")
       } else {
-        let SocketUrl = `ws://192.168.1.100:8081/monitor/` + this.getUUID()
+        // 使用后台地址
+        const apiUrl = process.env.VUE_APP_API_BASE_IP_PORT;
+        let SocketUrl = `ws://${apiUrl}/monitor/` + this.getUUID()
         // 实例化WebSocket
         this.webSocket = new WebSocket(SocketUrl)
         // 监听socket连接
